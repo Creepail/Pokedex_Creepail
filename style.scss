@@ -1,7 +1,7 @@
 *{
     padding: 0px;
     margin: 0px;
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 :root{
     --main-pok-color: red;
@@ -48,6 +48,7 @@ footer{
     div:hover{
         background-color: var(--main-pok-color);
         transition: all 1s;
+        cursor: pointer;
     }
 }
 
@@ -76,28 +77,54 @@ footer{
             color: white ;
             font-family: 'Lato', sans-serif;
             font-weight: 700;
-            background-color: red;
             height: 30%;
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
+            z-index: 1;
 
             div{
                 background-color: var(--background-color);
                 width: 95%;
                 height: 70%;
+                z-index: 2;
+
+                h1{
+                    margin-left: 5%;
+                    margin-top: 2%;
+                    font-weight: 400;
+                    font-size: 36px;
+                    letter-spacing: .2rem;
+                }
+
+                h2{
+                    margin-left: 5%;
+                    margin-top: 2%;
+                    font-weight: 400;
+                    font-size: 23px;
+                }
             }
 
             .nextevo{
                 padding: 10px 10px 10px 10px;
                 border: 2px solid var(--secondary-pok-color);
                 position: absolute;
-                pointer-events: none;
                 bottom: 20px;
                 right: 40px;
                 font-family: 'Lato', sans-serif;
                 font-weight: 700;
+                z-index: 10;
+
+                p{
+                    pointer-events: none;
+                }
+            }
+
+            .nextevo:hover{
+                cursor: pointer;
+                border: 3px solid var(--secondary-pok-color);
+
             }
         }
     }
@@ -131,9 +158,20 @@ footer{
                     height: 100%;
                     width: 70%;
                     border-radius: 100px;
+                    transition: all 1s;
                 }
 
             }
         }
     }
+}
+
+
+.pokeimg{
+    width: 100%;
+    height: 100%;
+    background-image: url('');
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.5s;
 }

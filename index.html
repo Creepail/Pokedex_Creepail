@@ -7,25 +7,24 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;0,900;1,400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
     </style>
 </head>
 <body>
-    <!-- <div class="main_box">
+     <!-- <div class="main_box">
     <section class="Pokemon_container">
-        <img class="pokeimg" src="" alt="">
         <div class="btn_box">
             <button class="previousbtn" disabled>Previous Pokemon</button>
-            <button class="btn">Next Pokemon</button>
+            <button class="btn">Next Pokemon</button> -->
             <input type="checkbox" name="Shiny" class="shiny">
-            <label for="Shiny">Shiny</label> 
+            <!-- <label for="Shiny">Shiny</label> 
         </div>
     </section>
         <div  class="searchbox">
         <input type="number" class="search">
         <button class="searchbtn">Go !</button>
         </div>
-    </div> -->
+    </div>  -->
 
 
     <header>
@@ -38,10 +37,10 @@
         <div class="pokemondesc">
             <div class="pokemonInfo">
                 <div>
-                    <h1 class="wow">None</h1>
-                    <h2>Type: </h2>
+                    <h1 class="pokemonNname">None</h1>
+                    <h2 class="pokemontype">Type: </h2>
                 </div>
-                <section class="nextevo">SEE NEXT EVOLUTION</section>
+                <section class="nextevo"><p>SEE NEXT EVOLUTION</p></section>
             </div>
             <span></span>
             <div class="pokemonstats">
@@ -49,25 +48,26 @@
                     <div class="bar_container"><P id="p_HP">HP:</P> <div class="HP bar"></div> </div>
                     <div class="bar_container"><P id="p_AT">ATTACK:</P> <div class="AT bar"></div> </div>
                     <div class="bar_container"><P id="p_DE">DEFENSE:</P> <div class="DE bar"></div> </div>
-                    <div class="bar_container"><P id="p_SP">SPEED:</P> <div class="SP bar"></div> </div>
                     <div class="bar_container"><P id="p_SD">SPECIAL DEFENSE:</P> <div class="SD bar"></div> </div>
                     <div class="bar_container"><P id="p_SA">SPECIAL ATTACK:</P> <div class="SA bar"></div> </div>
+                    <div class="bar_container"><P id="p_SP">SPEED:</P> <div class="SP bar"></div> </div>
                 </section>
             </div>
         </div>
         <!--Pokemon img-->
-        <div></div>
         <!--Pokemon search + strenghts ect-->
-        <div></div>
+        <div>
+            <div class="pokeimg" src="" alt=""> </div>
+        </div>
 
 
 
     </section>
 
     <footer>
-        <div><p> Previous Pokemon </p></div>
+        <div class="previousbtn"><p> Previous Pokemon </p></div>
         <div><p>All </p></div>
-        <div><p>Next Pokemon </p></div>
+        <div class="btn"><p>Next Pokemon </p></div>
     </footer>
 
     
