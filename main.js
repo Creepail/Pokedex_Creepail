@@ -1,9 +1,12 @@
 const damn = document.querySelector('.wow')
 const pokeimg = document.querySelector('.pokeimg')
-
 const search = document.querySelector('.search')
-
 const searchbtn = document.querySelector('.searchbtn')
+
+
+const nextbtn = document.querySelector('.btn')
+const lastbtn = document.querySelector('.previousbtn')
+const shinycheck = document.querySelector('.shiny')
 
 let pokemonnumber = 1
 let pokeurl ='https://pokeapi.co/api/v2/pokemon/'
@@ -35,25 +38,22 @@ fetchpokemon(pokeurl)
 
 function updatePokemonInfo(data){
     damn.innerHTML = data.name
-    if(shinycheck.checked == false){pokeimg.setAttribute('src', data.sprites.front_default)}
+    if(shinycheck.checked == false){pokeimg.setAttribute('src', data.sprites.other.home.front_default)}
     else
-    {pokeimg.setAttribute('src', data.sprites.front_shiny)}
+    {pokeimg.setAttribute('src', data.sprites.other.home.front_shiny)}
 
 }
 
-const nextbtn = document.querySelector('.btn')
-const lastbtn = document.querySelector('.previousbtn')
-const shinycheck = document.querySelector('.shiny')
 
 shinycheck.addEventListener('change', function(){
     if(shinycheck.checked == false){
     fetch(pokeurl + pokemonnumber)
     .then(response => response.json())
-    .then(pokemondata =>  pokeimg.setAttribute('src', pokemondata.sprites.front_default))
+    .then(pokemondata =>  pokeimg.setAttribute('src', pokemondata.sprites.other.home.front_default))
     } else {
         fetch(pokeurl + pokemonnumber)
     .then(response => response.json())
-    .then(pokemondata =>  pokeimg.setAttribute('src', pokemondata.sprites.front_shiny))
+    .then(pokemondata =>  pokeimg.setAttribute('src', pokemondata.sprites.other.home.front_shiny))
     }
 })
 
