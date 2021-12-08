@@ -10,6 +10,8 @@ const lastbtn = document.querySelector('.previousbtn')
 const shinycheck = document.querySelector('.shiny')
 
 let isShiny = false
+let root = document.documentElement;
+
 
 // Selecting every stats
 const hp = document.querySelector('#p_HP')
@@ -27,8 +29,103 @@ const special_def_bar = document.querySelector('.SD')
 const sepcial_att_bar = document.querySelector('.SA')
 const speed_bar = document.querySelector('.SP')
 
+// Creating object with all pokemon types and associated colors
 
-let pokemonnumber = 1
+const PokeType = {
+    bug:{ 
+        main: 'rgb(24, 136, 52)',
+        second:'rgb(17, 99, 41)'
+    },
+    
+    dark:{ 
+        main: 'wow',
+        second:'wow2'
+    },
+    
+    dragon:{ 
+        main: 'wow',
+        second:'wow2'
+    },
+    
+    electric:{ 
+        main: 'rgb(255, 255, 0)',
+        second:'rgb(197, 179, 16)'
+    },
+    
+    fairy:{ 
+        main: 'wow',
+        second:'wow2'
+    },
+    
+    fighting:{ 
+        main: 'wow',
+        second:'wow2'
+    },
+    
+    fire:{ 
+        main: 'rgb(255, 5, 5)',
+        second:'rgb(228, 44, 44)'
+    },
+    
+    flying:{ 
+        main: 'wow',
+        second:'wow2'
+    },
+    
+    ghost:{ 
+        main: 'wow',
+        second:'wow2'
+    },
+    
+    grass:{ 
+        main: 'rgb(44, 228, 90)',
+        second:'rgb(8, 82, 26)'
+    },
+    
+    ground:{ 
+        main: 'rgb(165, 126, 42)',
+        second:'rgb(126, 86, 27)'
+    },
+    
+    ice:{ 
+        main: 'wow',
+        second:'wow2'
+    },
+    
+    normal:{ 
+        main: 'rgb(255, 255, 255)',
+        second:'rgb(131, 121, 121)'
+    },
+    
+    poison:{ 
+        main: 'rgb(128, 0, 128)',
+        second:'rgb(73, 3, 87)'
+    },
+    
+    psychic:{ 
+        main: 'wow',
+        second:'wow2'
+    },
+    
+    rock:{ 
+        main: 'wow',
+        second:'wow2'
+    },
+    
+    steel:{ 
+        main: 'wow',
+        second:'wow2'
+    },
+    
+    water:{ 
+        main: 'rgb(9, 5, 255)',
+        second:'rgb(44, 78, 228)'
+    }
+    
+  };
+
+
+let pokemonnumber = 20
 let pokeurl ='https://pokeapi.co/api/v2/pokemon/'
 
 // searchbtn.addEventListener('click', function(){
@@ -46,7 +143,7 @@ let pokeurl ='https://pokeapi.co/api/v2/pokemon/'
 // })
 
 function fetchpokemon(url){
-    fetch(url + 1)
+    fetch(url + 20)
     .then(response => response.json())
     .then(pokemondata =>  updatePokemonInfo(pokemondata))
 }
@@ -96,6 +193,18 @@ function updatePokemonInfo(data){
     if(isShiny == false){pokeimg.style.backgroundImage = 'url('+ data.sprites.other.home.front_default + ')'}
     else
     {pokeimg.style.backgroundImage = 'url('+ data.sprites.other.home.front_shiny + ')'}
+
+    // Updating the theme depending on the pokemon type
+
+ for(const proprety in PokeType){
+     if(data.types[0].type.name == proprety)
+     root.style.setProperty('--main-pok-color', PokeType[data.types[0].type.name].main)
+     root.style.setProperty('--secondary-pok-color', PokeType[data.types[0].type.name].second)
+
+
+    }
+
+
 }
 
 // Function to update the pokedex
@@ -154,14 +263,3 @@ lastbtn.addEventListener('click', function(){
 
 
 
-// Creating object with all pokemon types and associated colors
-
-const PokeType = {
-    bug:{ 
-        main: 'wow',
-        second:'wow2'
-    }
-    
-    
-    
-  };
