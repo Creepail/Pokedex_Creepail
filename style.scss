@@ -4,16 +4,28 @@
     box-sizing: border-box;
 }
 :root{
-    --main-pok-color: red;
+    --main-pok-color: rgb(8, 82, 26);
     --secondary-pok-color: rgb(44, 228, 90);
     --border-color: rgba(255, 255, 255, 0.44);
     --background-color: rgb(36, 36, 36);
 }
 
 body{
-    background-color: rgb(17, 17, 17);
-    overflow: hidden;
+//     background-color: rgb(17, 17, 17);
+//     overflow: hidden;
+//     background-image: radial-gradient(rgb(22, 122, 47) 20%, transparent 20%),
+//       radial-gradient(#272525 20%, transparent 20%);
+//     background-position: 0 0, 50px 50px;
+//     background-size: 100px 100px;
+  background-color: rgb(29, 27, 27);
+  background-image: radial-gradient(var(--background-color) 10%, transparent 11%),
+    radial-gradient(var(--main-pok-color) 10%, transparent 11%);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+  background-repeat: repeat;
 }
+
+ 
 
 header{
     background-color: var(--background-color);
@@ -89,7 +101,7 @@ footer{
                 width: 60%;
                 height: 70%;
                 z-index: 2;
-                margin-top: 150px;
+                margin-top: 15px;
                 margin-left: 50px;
 
                 h1{
@@ -112,11 +124,12 @@ footer{
                 padding: 10px 10px 10px 10px;
                 border: 2px solid var(--secondary-pok-color);
                 position: absolute;
-                bottom: -70px;
-                right: 250px;
+                bottom: -18px;
+                right: 150px;
                 font-family: 'Lato', sans-serif;
                 font-weight: 700;
                 z-index: 10;
+                transition: all 0.1s;
 
                 p{
                     pointer-events: none;
@@ -126,13 +139,14 @@ footer{
             .nextevo:hover{
                 cursor: pointer;
                 border: 3px solid var(--secondary-pok-color);
+                transition: all 0.1s;
 
             }
         }
     }
 
     .pokemonstats{
-        height: 50%;
+        height: 65%;
 
         section{
             display: flex;
@@ -142,7 +156,6 @@ footer{
             .bar_container{
                 width: 80%;
                 height: 15px;
-                border: 1px solid var(--border-color);
                 margin-top: 35px;
                 position: relative;
                 border-radius: 100px;
@@ -174,7 +187,7 @@ footer{
     height: 100%;
     background-image: url('');
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: 50% 100%;
     transition: all 0.5s;
 }
 
@@ -195,5 +208,32 @@ footer{
             padding: 10px 10px 10px 10px;
             color: white;
         }
+    }
+}
+
+
+.pokedexBox{
+    position: absolute;
+    bottom: 140px;
+    left: -100px;
+    width: 200px;
+    height: 250px;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px 10px 10px;
+
+
+
+    p{
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: .2rem;
+        color: white;
+        font-family: 'Lato', sans-serif;
+        padding: 10px 10px 10px 10px;
+        text-align: left;
+
     }
 }

@@ -3,7 +3,7 @@ const pokemonType = document.querySelector('.pokemontype')
 const pokeimg = document.querySelector('.pokeimg')
 const search = document.querySelector('.search')
 const searchbtn = document.querySelector('.searchbtn')
-
+const pokedexEntry = document.querySelector('.pokedexEntry')
 
 const nextbtn = document.querySelector('.btn')
 const lastbtn = document.querySelector('.previousbtn')
@@ -33,7 +33,6 @@ let pokeurl ='https://pokeapi.co/api/v2/pokemon/'
 
 // searchbtn.addEventListener('click', function(){
 //     pokemonnumber = parseInt(search.value)
-//     console.log(pokemonnumber)
 //     fetch(pokeurl + pokemonnumber )
 //     .then(response => response.json())
 //     .then(pokemondata =>  updatePokemonInfo(pokemondata))
@@ -51,14 +50,14 @@ function fetchpokemon(url){
     .then(response => response.json())
     .then(pokemondata =>  updatePokemonInfo(pokemondata))
 }
-
-
-
 fetchpokemon(pokeurl)
+
 
 // ! Function in charge of updating all of the pokemon info !
 
 function updatePokemonInfo(data){
+    pokemonnumber = data.id
+   
     // Updating the pokemon type
     NumberofTypes  = Object.keys(data.types).length
     if(Object.keys(data.types).length == 1){
@@ -85,16 +84,25 @@ function updatePokemonInfo(data){
     defense_bar.style.width =  (data.stats[2].base_stat*100)/255 +'%'
     special_def_bar.style.width =  (data.stats[3].base_stat*100)/255 +'%'
     sepcial_att_bar.style.width =  (data.stats[4].base_stat*100)/255 +'%'
-    speed_bar.style.width =  (data.stats[5].base_stat*100)/255 +'%' 
+    speed_bar.style.width =  (data.stats[5].base_stat*100)/255 +'%'
+    
+    // Update the pokemon pokedex entry
+    fetch('https://pokeapi.co/api/v2/pokemon-species/' + data.species.name)
+    .then(response => response.json())
+    .then(pokedexentry =>  updatePokedex(pokedexentry))
 
 
     // Checking if the pokemon is shiny
     if(isShiny == false){pokeimg.style.backgroundImage = 'url('+ data.sprites.other.home.front_default + ')'}
     else
     {pokeimg.style.backgroundImage = 'url('+ data.sprites.other.home.front_shiny + ')'}
-
 }
 
+// Function to update the pokedex
+function updatePokedex(data){
+    data1 = data.flavor_text_entries[1].flavor_text.replace('', ' ')
+    pokedexEntry.innerHTML = data1.toUpperCase()
+}
 
 shinycheck.addEventListener('click', function(){
     if(isShiny== false){
@@ -114,9 +122,7 @@ shinycheck.addEventListener('click', function(){
 // Making the "next" btn work
 
 nextbtn.addEventListener('click', function(){
-    console.log('updating itself !')
     pokemonnumber += 1;
-    console.log(pokemonnumber)
     fetch(pokeurl + pokemonnumber)
     .then(response => response.json())
     .then(pokemondata =>  updatePokemonInfo(pokemondata))
@@ -130,8 +136,6 @@ nextbtn.addEventListener('click', function(){
 
 lastbtn.addEventListener('click', function(){
     if(pokemonnumber != 0){
-
-    console.log('updating itself !')
     pokemonnumber -= 1;
     fetch(pokeurl + pokemonnumber)
     .then(response => response.json())
@@ -150,3 +154,14 @@ lastbtn.addEventListener('click', function(){
 
 
 
+// Creating object with all pokemon types and associated colors
+
+const PokeType = {
+    bug:{ 
+        main: 'wow',
+        second:'wow2'
+    }
+    
+    
+    
+  };
