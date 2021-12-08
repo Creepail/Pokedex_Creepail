@@ -62,14 +62,16 @@ footer {
       height: 30%;
       position: relative;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       z-index: 1; }
       .main_section .pokemondesc .pokemonInfo div {
         background-color: var(--background-color);
-        width: 95%;
+        width: 60%;
         height: 70%;
-        z-index: 2; }
+        z-index: 2;
+        margin-top: 150px;
+        margin-left: 50px; }
         .main_section .pokemondesc .pokemonInfo div h1 {
           margin-left: 5%;
           margin-top: 2%;
@@ -85,8 +87,8 @@ footer {
         padding: 10px 10px 10px 10px;
         border: 2px solid var(--secondary-pok-color);
         position: absolute;
-        bottom: 20px;
-        right: 40px;
+        bottom: -70px;
+        right: 250px;
         font-family: 'Lato', sans-serif;
         font-weight: 700;
         z-index: 10; }
@@ -128,5 +130,20 @@ footer {
   background-repeat: no-repeat;
   background-position: center;
   transition: all 0.5s; }
+
+.pokeview {
+  position: relative; }
+  .pokeview .shiny {
+    border-radius: 50%;
+    border: 2px solid var(--secondary-pok-color);
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer; }
+    .pokeview .shiny i {
+      padding: 10px 10px 10px 10px;
+      color: white; }
 
 /*# sourceMappingURL=style.css.map */

@@ -9,6 +9,8 @@ const nextbtn = document.querySelector('.btn')
 const lastbtn = document.querySelector('.previousbtn')
 const shinycheck = document.querySelector('.shiny')
 
+let isShiny = false
+
 // Selecting every stats
 const hp = document.querySelector('#p_HP')
 const attack = document.querySelector('#p_AT')
@@ -87,22 +89,25 @@ function updatePokemonInfo(data){
 
 
     // Checking if the pokemon is shiny
-    if(shinycheck.checked == false){pokeimg.style.backgroundImage = 'url('+ data.sprites.other.home.front_default + ')'}
+    if(isShiny == false){pokeimg.style.backgroundImage = 'url('+ data.sprites.other.home.front_default + ')'}
     else
     {pokeimg.style.backgroundImage = 'url('+ data.sprites.other.home.front_shiny + ')'}
 
 }
 
 
-shinycheck.addEventListener('change', function(){
-    if(shinycheck.checked == false){
+shinycheck.addEventListener('click', function(){
+    if(isShiny== false){
     fetch(pokeurl + pokemonnumber)
     .then(response => response.json())
-    .then(pokemondata =>  pokeimg.style.backgroundImage = 'url('+ pokemondata.sprites.other.home.front_default + ')')
-    } else {
+    .then(pokemondata =>  pokeimg.style.backgroundImage = 'url('+ pokemondata.sprites.other.home.front_shiny + ')')
+    isShiny = true
+    } 
+    else {
         fetch(pokeurl + pokemonnumber)
     .then(response => response.json())
-    .then(pokemondata =>  pokeimg.style.backgroundImage = 'url('+ pokemondata.sprites.other.home.front_shiny + ')')
+    .then(pokemondata =>  pokeimg.style.backgroundImage = 'url('+ pokemondata.sprites.other.home.front_default + ')')
+    isShiny = false
     }
 })
 
