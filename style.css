@@ -106,6 +106,7 @@ footer {
       .main_section .pokemonstats section .bar_container {
         width: 80%;
         height: 15px;
+        border: 1px solid var(--border-color);
         margin-top: 35px;
         position: relative;
         border-radius: 100px; }
