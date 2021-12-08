@@ -53,13 +53,13 @@ const PokeType = {
     },
     
     fairy:{ 
-        main: 'wow',
-        second:'wow2'
+        main: 'rgb(255, 192, 203)',
+        second:'rgb(219, 121, 167)'
     },
     
     fighting:{ 
-        main: 'wow',
-        second:'wow2'
+        main: 'rgb(119, 22, 22)',
+        second:'rgb(80, 34, 7)'
     },
     
     fire:{ 
@@ -73,8 +73,8 @@ const PokeType = {
     },
     
     ghost:{ 
-        main: 'wow',
-        second:'wow2'
+        main: 'rgb(165, 13, 140)',
+        second:'rgb(117, 8, 99)'
     },
     
     grass:{ 
@@ -88,8 +88,8 @@ const PokeType = {
     },
     
     ice:{ 
-        main: 'wow',
-        second:'wow2'
+        main: 'rgb(5, 255, 234)',
+        second:'rgb(6, 158, 179)'
     },
     
     normal:{ 
@@ -103,13 +103,13 @@ const PokeType = {
     },
     
     psychic:{ 
-        main: 'wow',
-        second:'wow2'
+        main: 'rgb(223, 80, 228)',
+        second:'rgb(185, 70, 189)'
     },
     
     rock:{ 
-        main: 'wow',
-        second:'wow2'
+        main: 'rgb(211, 119, 58)',
+        second:'rgb(161, 71, 29)'
     },
     
     steel:{ 
@@ -125,7 +125,7 @@ const PokeType = {
   };
 
 
-let pokemonnumber = 20
+let pokemonnumber = 124
 let pokeurl ='https://pokeapi.co/api/v2/pokemon/'
 
 // searchbtn.addEventListener('click', function(){
@@ -143,7 +143,7 @@ let pokeurl ='https://pokeapi.co/api/v2/pokemon/'
 // })
 
 function fetchpokemon(url){
-    fetch(url + 20)
+    fetch(url + 124)
     .then(response => response.json())
     .then(pokemondata =>  updatePokemonInfo(pokemondata))
 }
