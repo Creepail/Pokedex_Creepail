@@ -125,7 +125,7 @@ const PokeType = {
   };
 
 
-let pokemonnumber = 208
+let pokemonnumber = 1
 let pokeurl ='https://pokeapi.co/api/v2/pokemon/'
 
 // searchbtn.addEventListener('click', function(){
@@ -143,7 +143,7 @@ let pokeurl ='https://pokeapi.co/api/v2/pokemon/'
 // })
 
 function fetchpokemon(url){
-    fetch(url + 208)
+    fetch(url + 1)
     .then(response => response.json())
     .then(pokemondata =>  updatePokemonInfo(pokemondata))
 }

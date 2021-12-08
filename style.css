@@ -5,7 +5,7 @@
 }
 
 :root {
-  --main-pok-color: rgb(105, 95, 95);
+  --main-pok-color: rgb(118, 150, 165);
   --secondary-pok-color: rgb(44, 78, 228);
   --border-color: rgba(255, 255, 255, 0.44);
   --background-color: rgb(36, 36, 36);
@@ -184,7 +184,7 @@ footer div:hover {
   bottom: 140px;
   left: -100px;
   width: 200px;
-  height: 250px;
+  height: fit-content;
   background-color: var(--background-color);
   display: flex;
   justify-content: center;
@@ -197,7 +197,6 @@ footer div:hover {
   letter-spacing: 0.2rem;
   color: white;
   font-family: "Lato", sans-serif;
-  padding: 10px 10px 10px 10px;
   text-align: left;
 }
 
