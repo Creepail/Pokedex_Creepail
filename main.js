@@ -38,13 +38,13 @@ const PokeType = {
     },
     
     dark:{ 
-        main: 'wow',
-        second:'wow2'
+        main: 'rgb(99, 98, 98)',
+        second:'rgb(46, 45, 45)'
     },
     
     dragon:{ 
-        main: 'wow',
-        second:'wow2'
+        main: 'rgb(38, 44, 121)',
+        second:'rgb(13, 17, 68)'
     },
     
     electric:{ 
@@ -68,8 +68,8 @@ const PokeType = {
     },
     
     flying:{ 
-        main: 'wow',
-        second:'wow2'
+        main: 'rgb(181, 232, 255)',
+        second:'rgb(118, 150, 165)'
     },
     
     ghost:{ 
@@ -113,8 +113,8 @@ const PokeType = {
     },
     
     steel:{ 
-        main: 'wow',
-        second:'wow2'
+        main: 'rgb(185, 177, 177)',
+        second:'rgb(105, 95, 95)'
     },
     
     water:{ 
@@ -125,7 +125,7 @@ const PokeType = {
   };
 
 
-let pokemonnumber = 124
+let pokemonnumber = 208
 let pokeurl ='https://pokeapi.co/api/v2/pokemon/'
 
 // searchbtn.addEventListener('click', function(){
@@ -143,7 +143,7 @@ let pokeurl ='https://pokeapi.co/api/v2/pokemon/'
 // })
 
 function fetchpokemon(url){
-    fetch(url + 124)
+    fetch(url + 208)
     .then(response => response.json())
     .then(pokemondata =>  updatePokemonInfo(pokemondata))
 }
@@ -165,7 +165,7 @@ function updatePokemonInfo(data){
 
     }
     // Updating the pokemon name
-    damn.innerHTML = data.species.name.charAt(0).toUpperCase() + data.species.name.slice(1);
+    damn.innerHTML = data.species.name.charAt(0).toUpperCase() + data.species.name.slice(1) + ' -  #' + data.id;
 
     // Updating the pokemon stats
     hp.innerHTML = 'HP: ' + data.stats[0].base_stat

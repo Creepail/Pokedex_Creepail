@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 :root{
-    --main-pok-color: rgb(219, 121, 167);
+    --main-pok-color: rgb(105, 95, 95);
     --secondary-pok-color: rgb(44, 78, 228);
     --border-color: rgba(255, 255, 255, 0.44);
     --background-color: rgb(36, 36, 36);
@@ -155,7 +155,7 @@ footer{
             align-items: center;
 
             .bar_container{
-                width: 80%;
+                width: 60%;
                 height: 15px;
                 margin-top: 35px;
                 position: relative;
