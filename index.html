@@ -5,33 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Online Pokedex</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
     </style>
 </head>
 <body>
-     <!-- <div class="main_box">
-    <section class="Pokemon_container">
-        <div class="btn_box">
-            <button class="previousbtn" disabled>Previous Pokemon</button>
-            <button class="btn">Next Pokemon</button> -->
-            <!-- <input type="checkbox" name="Shiny" class="shiny"> -->
-            <!-- <label for="Shiny">Shiny</label> 
-        </div>
-    </section>
-        <div  class="searchbox">
-        <input type="number" class="search">
-        <button class="searchbtn">Go !</button>
-        </div>
-    </div>  -->
-
-
-    <header>
-        <div></div>
-        <div></div>
-    </header>
-
+     
     <section class="main_section">
         <!--Pokemon name + stats-->
         <div class="pokemondesc">
@@ -59,7 +39,15 @@
                 <p class="pokedexEntry"></p>
             </section>
             <div class="shiny">
-                <i class="fas fa-redo"></i>
+                <section class="search_and_results">
+                    <input type="text" maxlength="11" class="search_bar search_width" placeholder="Enter a pokemon name !" autocomplete="off" onkeyup='FindingAutocomplete(this.value)'>
+                    <div class="result_box">
+                        
+                        
+                    </div>
+                </section>
+                <div class="shiny_container"><i class="fas fa-star"></i></div>
+            
             </div>
         </div>
 

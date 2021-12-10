@@ -7,7 +7,7 @@
     --main-pok-color: rgb(118, 150, 165);
     --secondary-pok-color: rgb(44, 78, 228);
     --border-color: rgba(255, 255, 255, 0.44);
-    --background-color: rgb(36, 36, 36);
+    --background-color: rgb(49, 49, 49);
 }
 
 body{
@@ -28,11 +28,6 @@ body{
 
  
 
-header{
-    background-color: var(--background-color);
-    height: 15vh;
-    border: 1px solid var(--border-color) ;
-}
 
 footer{
     height: 10vh;
@@ -67,7 +62,7 @@ footer{
 
 .main_section{
     width: 100%;
-    height: 75vh;
+    height: 90vh;
     display: flex;
     flex-direction: row;
 
@@ -147,32 +142,40 @@ footer{
     }
 
     .pokemonstats{
-        height: 65%;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
 
         section{
             display: flex;
             flex-direction: column;
             align-items: center;
+            width: 100%;
 
             .bar_container{
                 width: 60%;
                 height: 15px;
-                margin-top: 35px;
+                margin-top: 60px;
                 position: relative;
                 border-radius: 100px;
+             
 
                 p{
                     color: white ;
                     font-family: 'Lato', sans-serif;
                     font-weight: 700;
                     position: absolute;
-                    top: -150%;
+                    top: -200%;
+                    font-size: 24px;
                 }
 
                 .bar{
                     background-color: var(--main-pok-color);
                     height: 100%;
-                    width: 70%;
+                    width: 100%;
                     border-radius: 100px;
                     transition: all 1s;
                 }
@@ -188,7 +191,7 @@ footer{
     height: 100%;
     background-image: url('');
     background-repeat: no-repeat;
-    background-position: 50% 100%;
+    background-position: center;
     transition: all 0.5s;
 }
 
@@ -196,19 +199,88 @@ footer{
     position: relative;
 
     .shiny{
-        border-radius: 50%;
-        border: 2px solid var(--main-pok-color);
         position: absolute;
         top: 100px;
         right: 100px;
         width: fit-content;
         height: fit-content;
-        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
 
-        i{
-            padding: 10px 10px 10px 10px;
-            color: white;
+
+        .search_and_results{
+            position: relative;
+            margin-top: 5px;
+
+            .search_bar{
+                border: 2px solid var(--main-pok-color);
+                background-color: var(--background-color);
+                border-radius: 25px;
+                outline: none;
+                text-align: center;
+            }
+
+            .result_box{
+                width: 100%;
+                height: fit-content;
+                bottom: -130%;
+                left: 0%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+               
+            }
         }
+        
+        .search_width{
+            width: 200px !important;
+            height: 35px;
+        }
+
+        .autocomplete{
+            border: 2px solid var(--main-pok-color);
+            background-color: var(--background-color);
+            border-radius: 25px;
+            text-align: center;
+            width: 100%;
+            height: 35px;
+            margin-top: 20px;
+            opacity: 0.7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            p{
+            color: white;
+            text-align: center;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            }
+        }
+
+            .shiny_container{
+                display: flex;
+                width: 100%;
+                height: 200px;
+                
+                i{
+                    height: 40px;
+                    padding: 10px 10px 10px 10px;
+                    color: white;
+                    border-radius: 50%;
+                    background-color: var(--background-color);
+                    border: 2px solid var(--main-pok-color);
+                    cursor: pointer;
+                    margin-left: 30px;
+                }
+
+            }
+
+       
     }
 }
 
@@ -237,3 +309,5 @@ footer{
 
     }
 }
+
+
