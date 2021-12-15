@@ -220,4 +220,21 @@ footer {
     font-family: 'Lato', sans-serif;
     text-align: left; }
 
+.gender {
+  position: absolute;
+  display: none;
+  height: 50px;
+  font-size: 22px;
+  padding: 12px 18px 10px 18px;
+  color: white;
+  border-radius: 50%;
+  background-color: var(--background-color);
+  border: 2px solid var(--main-pok-color);
+  cursor: pointer;
+  left: 80px;
+  bottom: 50px; }
+
+.autocomplete_value {
+  cursor: pointer; }
+
 /*# sourceMappingURL=style.css.map */
