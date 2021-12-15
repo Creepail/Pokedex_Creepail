@@ -63,7 +63,7 @@ function FindingAutocomplete(x){
     if(x.length >= 1){
     let validname = ['']
     Allpokemon.forEach(function(name){
-        if(x.substr(0, x.length) == name.substr(0, x.length)){
+        if(x.substr(0, x.length).toLowerCase() == name.substr(0, x.length)){
                 validname.push(name)   
         }
     } )
