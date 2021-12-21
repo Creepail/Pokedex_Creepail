@@ -8,6 +8,7 @@ const pokedexEntry = document.querySelector('.pokedexEntry')
 const nextbtn = document.querySelector('.btn')
 const lastbtn = document.querySelector('.previousbtn')
 const shinycheck = document.querySelector('.fa-star')
+const pokemonSize = document.querySelector('.PokemonSize')
 
 let isShiny = false
 let root = document.documentElement;
@@ -215,12 +216,15 @@ function updatePokemonInfo(data){
     // Updating the pokemon type
     NumberofTypes  = Object.keys(data.types).length
     if(Object.keys(data.types).length == 1){
-        pokemonType.innerHTML = 'Type: ' + data.types[0].type.name.charAt(0).toUpperCase() + data.types[0].type.name.slice(1);
+        pokemonType.innerHTML = 'Type:  ' + data.types[0].type.name.charAt(0).toUpperCase() + data.types[0].type.name.slice(1);
     }
     else{
-        pokemonType.innerHTML = 'Type: ' + data.types[0].type.name.charAt(0).toUpperCase() + data.types[0].type.name.slice(1) + ' - ' +  data.types[1].type.name.charAt(0).toUpperCase() + data.types[1].type.name.slice(1);
+        pokemonType.innerHTML = 'Type:  ' + data.types[0].type.name.charAt(0).toUpperCase() + data.types[0].type.name.slice(1) + ' - ' +  data.types[1].type.name.charAt(0).toUpperCase() + data.types[1].type.name.slice(1);
 
     }
+    let convertedsize = data.height * 0.1
+    pokemonSize.innerHTML = 'Size: ' + convertedsize.toFixed(1) + ' m'
+
     // Updating the pokemon name
     damn.innerHTML = data.species.name.charAt(0).toUpperCase() + data.species.name.slice(1) + ' -  #' + data.id;
 
