@@ -288,9 +288,20 @@ function updatePokemonInfo(data){
 }
 
 // Function to update the pokedex
+
 function updatePokedex(data){
-    data1 = data.flavor_text_entries[1].flavor_text.replace('', ' ')
-    pokedexEntry.innerHTML = data1.toUpperCase()
+    console.log((data.flavor_text_entries).length)
+    for (var i = 0; i < (data.flavor_text_entries).length; ++i){
+        if(data.flavor_text_entries[i].language.name == 'en'){
+            
+            data1 = data.flavor_text_entries[i].flavor_text.replace('', ' ')
+            pokedexEntry.innerHTML = data1.toUpperCase()
+            break;
+        } else {
+            pokedexEntry.innerHTML = 'NO DATA FOUND'
+        }
+    }
+   
 }
 
 //Checking if the pokemon has a gender difference
