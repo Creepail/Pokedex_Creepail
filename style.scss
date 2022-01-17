@@ -95,7 +95,7 @@ footer{
             div{
                 background-color: var(--background-color);
                 width: 60%;
-                height: 70%;
+                height: fit-content;
                 z-index: 2;
                 margin-top: 15px;
                 margin-left: 50px;
@@ -111,6 +111,7 @@ footer{
                 h2{
                     margin-left: 5%;
                     margin-top: 2%;
+                    margin-bottom: 5%;
                     font-weight: 400;
                     font-size: 23px;
                 }
